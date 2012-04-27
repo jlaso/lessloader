@@ -41,7 +41,7 @@ class LessLoader {
         $this->palette = $palette;
         $this->styles  = $styles;
         
-        //if(!in_array($this->palette, $legalPalettes)) $this->palette=$legalPalettes[0];
+        if(!in_array($this->palette, $legalPalettes)) $this->palette=$legalPalettes[0];
         $this->auto_compile_less($this->dir, $this->palette, $this->styles);
     }
     

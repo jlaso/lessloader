@@ -1,12 +1,11 @@
 <?php 
 
-   //error_reporting(E_ALL);
+   error_reporting(E_ALL);
    require_once "inc/LessLoader.php"; 
-   $pal = $_GET['pal']; 
+   $pal = isset($_GET['pal'])?$_GET['pal']:''; 
    $palettes = array('pink','gray', 'orange');
    $ll = new LessLoader("./css", $pal, $palettes, 'styles'); 
-   //print_r($ll); die();
-
+   
 ?>
 <html>
     

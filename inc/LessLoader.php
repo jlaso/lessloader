@@ -1,8 +1,9 @@
 <?php
 
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * @todo: final file css estructure variable, like $str = "s-p" or "ps" or "p_s"
+ * @todo: folder to less compilated that can be ignored by git and returns that by getCssName()
+ * @todo: test if one style.less that includes more less run ok with this class
  */
 
 require_once "lessphp/lessc.inc.php";
@@ -11,6 +12,11 @@ if (!defined('__DIR__')) define ("__DIR__",dirname(__FILE__));
 /**
  * Description of LessLoader
  * a loader and mixer from less palette file independent of master style file
+ * see sample.php for demonstration of use
+ * the idea is to have one or more less files that specifying colors and other attributes palette dependants
+ * and one style less file that use this attributes, in the fly LessLoader checks if there are
+ * any change in the less files, join their, and then compile final less with lessphp compiler,
+ * finally we can use getCssName method to have direct access to the generated file
  * 
  * @author Joseluis Laso
  */
